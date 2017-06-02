@@ -1,0 +1,59 @@
+﻿<Window x:Class="WpfDI.View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfDI.View"
+        xmlns:telerikDocking="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Docking"
+        mc:Ignorable="d" Title="MainWindow" Height="300" Width="300" WindowState="Maximized">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBox Grid.Row="0" Text="{Binding Text, Mode=TwoWay}" />
+        
+        <Button Grid.Row="1" Command="{Binding NewPaneCommand}" Content="New Pane" />
+        
+        <Button Grid.Row="2" Command="{Binding NewModalCommand}" Content="New Modal" />
+        
+        <telerikDocking:RadDocking Grid.Row="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" PanesSource="{Binding Panes}">
+            <telerikDocking:RadDocking.DockingPanesFactory>
+                <local:PaneFactory/>
+            </telerikDocking:RadDocking.DockingPanesFactory>
+        </telerikDocking:RadDocking>
+    </Grid>
+</Window>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
